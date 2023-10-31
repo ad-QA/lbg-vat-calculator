@@ -18,10 +18,13 @@ pipeline {
          
         }
           stage('Build') {
+              environment{
+                  scannerHome = tool "sonarqube"
+              }
             steps {
                 // Get some code from a GitHub repository
               withSoarQubeEnv("sonar-qube-1"){
-                sh "${scannerHome}/bin/onar-scanner"
+               sh '${scannerHome}/bi/sonar-scanner'
               }
   
             }
