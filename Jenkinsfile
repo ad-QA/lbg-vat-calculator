@@ -23,7 +23,7 @@ pipeline {
               }
             steps {
                 // Get some code from a GitHub repository
-              withSoarQubeEnv("sonar-qube-1"){
+              withSonarQubeEnv("sonar-qube-1"){
                sh '${scannerHome}/bin/sonar-scanner'
               }
   
